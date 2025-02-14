@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const nav = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            nav.style.background = 'rgba(48, 63, 74, 0.7)';
+            nav.style.background = 'rgba(51,78,172, 0.7)';
         } else {
-            nav.style.background = 'rgba(48, 63, 74, 0.9)';
+            nav.style.background = 'rgba(51,78,172, 0.7)';
         }
     });
 });
