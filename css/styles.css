@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0033ff;
+    color: #CCD0CF;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(48, 63, 74, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+.phnavbar {
+    top: 0;
+    width: 100%;
+    background: rgba(75, 111, 241, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+.phnav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #CCD0CF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #B1B2B5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #CCD0CF;
+}
+
+.sidemenu-text{
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(45deg, #303F4A, #1A1D29);
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.animate-text {
+    font-size: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-indicator {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #7D8491;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-indicator::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    background: #696969;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { top: 10px; opacity: 0; }
+    50% { top: 20px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #CCD0CF;
+}
+
+.info-card {
+    background: #303F4A;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.info-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.side-menu {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    background: #6ab0e3;
+    color: #222222;
+    transition: all 0.3s;
+    z-index: 2000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    font-family: "Raleway", Italic;
+}
+
+.menu-content {
+    padding: 2rem;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #1A1D29;
+    color: #CCD0CF;
+    overflow-x: hidden;
+}
+
+/* Навигационная панель */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(48, 63, 74, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: 1000;
+    transition: all 0.3s;
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #CCD0CF;
+}
+
+/* Меню-гамбургер */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #CCD0CF;
+    transition: all 0.3s;
+}
+
+/* Основные ссылки */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #B1B2B5;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #CCD0CF;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
+    
+    .navbar {
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: none;
+    }
+    .hero-content{
+        display:none;
+    }
+}
+@media (min-width: 768px){
+    .phnavbar{
+        display: none;
+    }
+    .phhero-content{
+        display:none;
+    }
+}
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #1A1D29;
+    color: #CCD0CF;
+    overflow-x: hidden;
+}
+
+/* Навигационная панель */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(51,78,172, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #CCD0CF;
+}
+
+.about-btn {
+    background: none;
+    border: none;
+    color: #dbe2f5;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.about-btn:hover {
+    color: #CCD0CF;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #dbe2f5;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #CCD0CF;
+}
+
+/* Секция Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient( 45deg, #BAD6EB, #82c9ff);
+    text-align: center;
+    color: #030b27;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    background: #4865cf;
+    color: #edf1f6 ;
+    border-radius: 30px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.phhero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    color: #222222 ;
+    border-radius: 30px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+
+.animate-text {
+    font-size: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+    font-family: "Raleway", Italic;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.hero-subtext {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    opacity: 0;
+    animation: fadeUp 1s 0.5s forwards;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #FFF7E0;
+    color: #1A1D29;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s;
+    opacity: 0;
+    animation: fadeUp 1s 1s forwards;
+}
+
+.hero-cta:hover {
+    background: #CCD0CF;
+}
+
+/* Заголовки секций */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+    color: #CCD0CF;
+    font-weight: 1000;
+    font-style: bold;
+
+}
+
+/* Остальные стили оставляем как в предыдущей версии */
