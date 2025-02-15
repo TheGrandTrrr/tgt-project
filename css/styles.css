@@ -23,13 +23,14 @@ body {
 .phnavbar {
     top: 0;
     width: 100%;
-    background: rgba(75, 111, 241, 0.4);
+    background: #5074C3;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s;
+    color: #ffffff;
 }
 .phnav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -38,7 +39,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 3000px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -47,9 +48,10 @@ body {
 }
 
 .logo {
+    font-family: "Unbounded", serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #CCD0CF;
+    color: #ffffff;
 }
 
 .nav-links {
@@ -139,10 +141,12 @@ body {
 }
 
 .info-card {
-    background: #303F4A;
+    background: #929ed8;
     border-radius: 15px;
     padding: 2rem;
     transition: transform 0.3s, box-shadow 0.3s;
+    color: #000000;
+    font-size: 1.12rem;
 }
 
 .info-card:hover {
@@ -170,6 +174,7 @@ body {
     z-index: 2000;
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     font-family: "Raleway", Italic;
+    backdrop-filter: blur(10px);
 }
 
 .menu-content {
@@ -207,7 +212,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 1200px;
+    max-width: 1250px;
     background: rgba(48, 63, 74, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -291,11 +296,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: "Montserrat", serif;
 }
 
 body {
-    background-color: #1A1D29;
+    background-color: #FAF3E0;
     color: #CCD0CF;
     overflow-x: hidden;
 }
@@ -312,7 +317,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 4000px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -384,6 +389,8 @@ body {
     border-radius: 30px;
     padding: 2rem;
     transition: transform 0.3s, box-shadow 0.3s; 
+    position: relative;
+    top: -4rem;
 }
 
 
@@ -392,9 +399,8 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s forwards;
-    font-family: "Raleway", Italic;
+    font-family: "Unbounded", serif;
     font-weight: 600;
-    font-style: italic;
 }
 
 .hero-subtext {
@@ -429,10 +435,10 @@ body {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s forwards;
-    color: #CCD0CF;
+    color: #2a2829;
     font-weight: 1000;
     font-style: bold;
-
+    font-family: "Montserrat", serif;
 }
 
 /* Остальные стили оставляем как в предыдущей версии */
