@@ -85,12 +85,12 @@ body {
 
 
 .heroend {
-    height: 150vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background:radial-gradient(#7faac9, #2a3974);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 
@@ -176,6 +176,13 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     color: #000000;
     font-size: 1.12rem;
+}
+.info-cardsp h3{
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #000000;
+    font-size: 1.5rem;
+    text-align: center;
 }
 .speccont{
     display: flex;
