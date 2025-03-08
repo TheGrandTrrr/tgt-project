@@ -63,3 +63,104 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+// Получаем размеры контейнера
+const container = document.getElementById('scene-container');
+renderer.setSize(container.clientWidth, container.clientHeight);
+container.appendChild(renderer.domElement);
+
+// Освещение
+const ambientLight = new THREE.AmbientLight(0x404040, 5);
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+directionalLight.position.set(1, 1, 1).normalize();
+scene.add(directionalLight);
+
+// Переменная для хранения микшера анимаций
+let mixer;
+
+// Загрузка модели
+const loader = new THREE.GLTFLoader();
+loader.load(
+    './3d/nuannimnbrororooror.glb', // Путь к модели
+    function (gltf) {
+        const model = gltf.scene;
+        scene.add(model);
+
+        // Настройка позиции и масштаба
+        model.position.set(0, 0, 0);
+        model.scale.set(1, 1, 1);
+
+        // Создаем AnimationMixer
+        mixer = new THREE.AnimationMixer(model);
+
+        // Получаем анимации из модели
+        const clips = gltf.animations;
+
+        // Проигрываем все анимации
+        if (clips && clips.length > 0) {
+            clips.forEach(clip => {
+                const action = mixer.clipAction(clip);
+                action.play();
+            });
+        } else {
+            console.warn('No animations found in the model.');
+        }
+    },
+    undefined,
+    function (error) {
+        console.error('An error happened while loading the model:', error);
+    }
+);
+
+scene.background = new THREE.Color(0x020130); // Голубой цвет
+
+// Позиция камеры
+camera.position.z = 5;
+
+// Инициализация OrbitControls
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; // Включаем эффект инерции для плавности
+controls.dampingFactor = 0.05; // Сила инерции
+controls.screenSpacePanning = true;
+controls.minDistance = 2; // Минимальное расстояние для приближения
+controls.maxDistance = 10; // Максимальное расстояние для отдаления
+controls.maxPolarAngle = Math.PI / 2; // Ограничиваем угол вращения по вертикали
+
+// Переменная для отслеживания времени
+let clock = new THREE.Clock();
+
+// Анимация
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Обновляем AnimationMixer
+    if (mixer) {
+        const delta = clock.getDelta();
+        mixer.update(delta);
+    }
+
+    // Обновляем OrbitControls
+    controls.update();
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// Обработка изменения размера окна
+window.addEventListener('resize', () => {
+    const container = document.getElementById('scene-container');
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    // Обновляем размеры рендерера
+    renderer.setSize(width, height);
+
+    // Обновляем соотношение сторон камеры
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+});
